@@ -13,6 +13,10 @@ class StepperPage {
   firstStepperBlockNextButtonClick() {
     cy.get("button[type='submit'][aria-disabled='false']").contains('next').click();
   }
+  firstStepperContainsStep(text){
+    cy.get('[class="step ng-star-inserted completed"]').contains(text);
+
+  }
 
 }
 export default new StepperPage();
