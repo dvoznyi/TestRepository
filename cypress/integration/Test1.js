@@ -1,3 +1,5 @@
+import stepperPage from '../pages/stepperPage'
+
 describe('dvTestSuite', () => {
     it('VerifyTitleOfThePage', () => {
         cy.visit('http://localhost:4200/pages/layout/stepper');
@@ -13,4 +15,20 @@ describe('dvTestSuite', () => {
         cy.get('.ng-star-inserted').contains ('Step content #4');
 
     })
+
+  it.only('page object', () => {
+    stepperPage.visit();
+    stepperPage.firstStepperBlockText('Step content #1');
+    stepperPage.firstStepperBlockNextButtonClick();
+    stepperPage.firstStepperContainsStep('First step');
+    stepperPage.firstStepperBlockText('Step content #2');
+    stepperPage.firstStepperBlockNextButtonClick();
+    stepperPage.firstStepperContainsStep('Second step');
+    stepperPage.firstStepperBlockText('Step content #3');
+    stepperPage.firstStepperBlockNextButtonClick();
+    stepperPage.firstStepperContainsStep('Third step');
+    stepperPage.firstStepperBlockText('Step content #4');
+
+  })
+
 })
