@@ -17,7 +17,7 @@ describe('dvTestSuite', () => {
     stepperPage.visit();
     Background.OptionFrame()
     Background.BackgroundChange('Dark')
-    cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(34, 43, 69)')
+    cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(34, 43, 69)') // нету пейдж обджекта
     Background.OptionFrame()
     Background.BackgroundChange('Cosmic')
     cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(50, 50, 89)')
