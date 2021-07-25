@@ -1,5 +1,5 @@
 import stepperPage from '../pages/stepperPage'
-import Background from '../pages/Background'
+import basePage from '../pages/basePage';
 describe('dvTestSuite', () => {
   it('VerifyTitleOfThePage', () => {
     stepperPage.visit();
@@ -15,14 +15,17 @@ describe('dvTestSuite', () => {
   })
   it.only('page object', () => {
     stepperPage.visit();
-    Background.OptionFrame()
-    Background.BackgroundChange('Dark')
-    cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(34, 43, 69)') // нету пейдж обджекта
-    Background.OptionFrame()
-    Background.BackgroundChange('Cosmic')
-    cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(50, 50, 89)')
-    Background.OptionFrame()
-    Background.BackgroundChange('Corporate')
-    cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(255, 255, 255)')
+    basePage.themeListOpen()
+    basePage.themeOptionChoose('Dark')
+    basePage.themeValueCheck('Dark')
+    cy.wait(1000)
+    cy.log('Cosmic')
+    basePage.themeListOpen()
+    basePage.themeOptionChoose('Cosmic')
+    basePage.themeValueCheck('Cosmic')    
+    basePage.themeListOpen()
+    basePage.themeOptionChoose('Corporate')
+    basePage.themeValueCheck('Corporate')
+
   })
 })
