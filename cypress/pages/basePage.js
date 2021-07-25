@@ -1,20 +1,27 @@
-class basePage { //классы, тесты, функции, методы и т.д. в js обычно с маленькой буквы называют (и назвать класс лучше не так)
-                    // поскольку тут ты описываешь список тем сайта и он находится в хедере, то это всё можно отнести к классу basePage
-                  // basePage это название "страницы" элементы которой есть на всех страницах (такие как хэдер, футер, меню и т.д.)
-    themeListOpen() { //не понятное название метода (ThemeOption)
-        return cy.get('nav nb-select').click()
+class basePage { 
+    themeList(){
+        return cy.get('nav nb-select')   
     }
-    themeOptionChoose(text){ //то же самое. Лучше назвать ThemeList
-       return cy.get('.options-list').contains(text).click()
+    themeListOpen() {
+        return this.themeList().click()
+    }
+    themeOption(text){
+        return cy.get('.options-list').contains(text)
+    }
+    themeOptionChoose(text){ 
+       return this.themeOption(text).click()
     }
     themeValueCheck(themeName){
         switch(themeName){
             case 'Dark':
-                cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(34, 43, 69)')
+                cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(34, 43, 69)');
+            break
             case 'Cosmic':
-                cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(50, 50, 89)')
+                cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(50, 50, 89)');
+                break
             case 'Corporate':
-                cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(255, 255, 255)')
+                cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(255, 255, 255)');
+                break
         }
     }
 

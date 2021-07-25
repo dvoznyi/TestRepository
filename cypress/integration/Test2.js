@@ -18,8 +18,6 @@ describe('dvTestSuite', () => {
     basePage.themeListOpen()
     basePage.themeOptionChoose('Dark')
     basePage.themeValueCheck('Dark')
-    cy.wait(1000)
-    cy.log('Cosmic')
     basePage.themeListOpen()
     basePage.themeOptionChoose('Cosmic')
     basePage.themeValueCheck('Cosmic')    
