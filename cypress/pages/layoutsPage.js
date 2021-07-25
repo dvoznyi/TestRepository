@@ -70,7 +70,6 @@ class layoutsPage {
     }
     horizontalFormRememberMe(){
         return cy.get('.custom-checkbox').eq(2).click()
-        //return cy.get('span').eq(1).should('contain', 'Remember me').click()
     }
     horizontalFormSignIn(){
         return cy.get("button[status='warning'][type='submit']").click()
