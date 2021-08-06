@@ -6,5 +6,5 @@ it.only('Test1', () => {
   layoutsPage.inlineFormNameFill('Vasya')
   layoutsPage.inLineFormEmail('vasyl@gmai.com')
   layoutsPage.rememberMeButton()
-  layoutsPage.submitButton1() // не работает этот шаг, нужно написать другой локатор
+  layoutsPage.submitButton1() 
 })
