@@ -1,21 +1,21 @@
 class layoutsPage {
-    inlineFormName(){
-        return cy.get("input[placeholder='Jane Doe']").type('Vasya')
+    inlineFormNameFill(name){
+        return cy.get("input[placeholder='Jane Doe']").type(name)
     }
-    inLineFormEmail(){
-        return  cy.get("input[placeholder='Email'][type='text'").type('Petrovich@gmail.com')
+    inLineFormEmail(email){
+        return  cy.get("input[placeholder='Email'][type='text'").type(email)
     }
     rememberMeButton(){
         return cy.get('.text').contains ('Remember me').click()
     }
     submitButton1(){
-        return cy.get("button[ng-reflect-status='primary'][type='submit']").click({ multiple: true })
+        return cy.get('[class="form-inline"]').find("button[status='primary'][type='submit']").click()
     }
-    usingTheGridEmail(){
-        return cy.get("input[data-cy='imputEmail1']").type('Vasyl1488@gmail.com')
+    usingTheGridEmail(email){
+        return cy.get("input[data-cy='imputEmail1']").type(email)
     }
-    passwordUsingTheGrid(){
-        return cy.get("input[id='inputPassword2']").type('14881933')
+    passwordUsingTheGrid(password){
+        return cy.get("input[id='inputPassword2']").type(password)
     }
     radioButtonUsingTheGrid(){
         return cy.get('.text').contains('Option 1').click()
@@ -23,11 +23,11 @@ class layoutsPage {
     submitButton2(){
         return cy.get("button[ng-reflect-status='primary'][type='submit']").contains('Sign in').click()
     }
-    basicFormEmail(){
-        return cy.get("input[id='exampleInputEmail1']").type('Petrovich@gmail.com')
+    basicFormEmail(email){
+        return cy.get("input[id='exampleInputEmail1']").type(email)
     }
-    basicFormPassword(){
-        return cy.get("input[id='exampleInputPassword1'").type('14881933')
+    basicFormPassword(password){
+        return cy.get("input[id='exampleInputPassword1'").type(password)
     }
     checkMeOutButton(){
         return cy.get('.text').contains('Check me out').click()
@@ -35,41 +35,41 @@ class layoutsPage {
     submitButton3(){
         return cy.get("button[status='danger'][type='submit']").click()
 }
-    recipients(){
-        return cy.get("input[placeholder='Recipients'").type('1488')
+    recipients(text){
+        return cy.get("input[placeholder='Recipients'").type(text)
     }
-    subject(){
-        return cy.get("input[placeholder='Subject'").type('1488')
+    subject(text){
+        return cy.get("input[placeholder='Subject'").type(text)
     }
-    message(){
-        return cy.get("textarea[placeholder='Message'").type('1488')
+    message(text){
+        return cy.get("textarea[placeholder='Message'").type(text)
     }
     formWithoutLabelsSend(){
         return cy.get("button[status='success'][type='submit']").click()
     }
-    blockFormName(){
-        return cy.get("input[placeholder='First Name'").type('Vasya')
+    blockFormName(name){
+        return cy.get("input[placeholder='First Name'").type(name)
     }
-    blockFormSurname(){
-        return cy.get("input[placeholder='Last Name'").type('Petrov')
+    blockFormSurname(name){
+        return cy.get("input[placeholder='Last Name'").type(name)
     }
-    blockFormEmail(){
-        return cy.get("input[id='inputEmail']").type('Petrovich@gmail.com')
+    blockFormEmail(email){
+        return cy.get("input[id='inputEmail']").type(email)
     }
-    websiteButton(){
-        return cy.get("input[placeholder='Website'").type('pornhub.com')
+    websiteButton(text){
+        return cy.get("input[placeholder='Website'").type(text)
     }
     blockFormSubmit(){
         return cy.get("button[type='submit']").contains('Submit').click()
     }
-    horizontalFormEmail(){
-        return cy.get("input[id='inputEmail3']").type('Petrovich@gmail.com')
+    horizontalFormEmail(email){
+        return cy.get("input[id='inputEmail3']").type(email)
     }
-    horizontalFormPassword(){
-        return cy.get("input[id='inputPassword3']").type('14881933')
+    horizontalFormPassword(password){
+        return cy.get("input[id='inputPassword3']").type(password)
     }
     horizontalFormRememberMe(){
-        return cy.get('.custom-checkbox').eq(2).click()
+        return cy.get('[class="form-horizontal"]').find('[class="custom-checkbox"]').click()
     }
     horizontalFormSignIn(){
         return cy.get("button[status='warning'][type='submit']").click()
